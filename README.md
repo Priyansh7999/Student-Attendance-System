@@ -19,7 +19,7 @@ The **Student Attendance System** is a Python-based application designed to simp
 The GUI provides an intuitive interface with the following key panels:
 
 #### **Login Page**
-- Secure login with **username** and **password**.
+- Secure login with **username** and **password**. (for 1st time usename: op password: op)
 - Access to:
   - **Data Management Panel**
   - **Student Management Panel**

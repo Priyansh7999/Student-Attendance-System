@@ -12,15 +12,6 @@ The **Student Attendance System** is a Python-based application designed to simp
 - Built using **HOG (Histogram of Oriented Gradients)** and **ResNet** models from the `face_recognition` library.
 - Achieves an **accuracy of 90%** in predicting and recognizing student faces.
 - Matches recognized faces against a database to mark attendance.
-## How It Works
-### Face Encoding Process (`encode.py`)
-1. All images of students are stored in the **`training`** folder.
-   - Each student's images are stored in a separate subfolder named after the student (e.g., `training/John_Doe/`).
-2. The `encode.py` script:
-   - Reads all images from the `training` folder.
-   - Encodes each face using the `face_recognition` library.
-   - Saves the encodings along with their respective names into an **`output.pkl`** file.
-3. The encoded data in the `output.pkl` file is used during face recognition to match and identify students.
 
 ---
 
@@ -34,7 +25,8 @@ The GUI provides an intuitive interface with the following key panels:
   - **Student Management Panel**
 
 #### **Data Management Panel**
-- Add new users and students.
+- Add new users (usename name and password)
+- Add new student (name,batch,roll number,year,and 3 photos to save it in training folder)
 - Update existing user and student information.
 - Encode faces and store them in the database for recognition.
 
@@ -54,19 +46,25 @@ The GUI provides an intuitive interface with the following key panels:
 
 ## How It Works
 
-1. **Login**: 
-   - Users log in through the login page to access the system.
+### Face Encoding Process (`encode.py`)
+1. All images of students are stored in the **`training`** folder.
+   - Each student's images are stored in a separate subfolder named after the student (e.g., `training/John_Doe/`).
+2. The `encode.py` script:
+   - Reads all images from the `training` folder.
+   - Encodes each face using the `face_recognition` library.
+   - Saves the encodings along with their respective names into an **`output.pkl`** file.
+3. The encoded data in the `output.pkl` file is used during face recognition to match and identify students.
 
-2. **Data Management**:
-   - Users can manage student and user data, including adding, updating, and encoding faces into the system.
-
-3. **Attendance Process**:
-   - In the Student Management Panel:
-     1. Select the **subject**, **date**, **time**, **year**, and **batch**.
-     2. Fetch the student data for the selected batch.
-     3. Press **Start Attendance** to open the face recognition system.
-     4. Recognized faces are marked **Present**, while others are marked **Absent**.
-     5. Save the attendance data.
+### Attendance Process
+1. In the **Student Management Panel**:
+   - Select the **subject**, **date**, **time**, **year**, and **batch**.
+   - Fetch the student data for the selected batch.
+   - Press **Start Attendance** to open the face recognition system.
+2. The system:
+   - Recognizes faces in real time using the encodings from `output.pkl`.
+   - Marks recognized students as **Present**.
+   - Marks others as **Absent** when attendance is closed.
+3. Save the attendance data.
 
 ---
 

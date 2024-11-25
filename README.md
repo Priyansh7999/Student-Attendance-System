@@ -12,6 +12,15 @@ The **Student Attendance System** is a Python-based application designed to simp
 - Built using **HOG (Histogram of Oriented Gradients)** and **ResNet** models from the `face_recognition` library.
 - Achieves an **accuracy of 90%** in predicting and recognizing student faces.
 - Matches recognized faces against a database to mark attendance.
+## How It Works
+### Face Encoding Process (`encode.py`)
+1. All images of students are stored in the **`training`** folder.
+   - Each student's images are stored in a separate subfolder named after the student (e.g., `training/John_Doe/`).
+2. The `encode.py` script:
+   - Reads all images from the `training` folder.
+   - Encodes each face using the `face_recognition` library.
+   - Saves the encodings along with their respective names into an **`output.pkl`** file.
+3. The encoded data in the `output.pkl` file is used during face recognition to match and identify students.
 
 ---
 
